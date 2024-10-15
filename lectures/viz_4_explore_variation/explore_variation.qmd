@@ -12,6 +12,12 @@ format:
 engine: jupyter
 ---
 
+```{python}
+#| echo: false
+import pandas as pd
+data = pd.read_json('data/gapminder.json')
+
+```
 
 ```{python}
 #| echo: false

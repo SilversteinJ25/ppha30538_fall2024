@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Peter Ganong and Maggie Shi">
-<meta name="dcterms.date" content="2024-10-10">
+<meta name="dcterms.date" content="2024-10-15">
 
 <title>Visualization (Data Transformation)</title>
 <style>
@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2024</p>
+      <p class="date">October 15, 2024</p>
     </div>
   </div>
   
@@ -154,20 +154,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="load-packages" class="level2">
 <h2 class="anchored" data-anchor-id="load-packages">load packages</h2>
-<div id="aee600d3" class="cell" data-execution_count="1">
+<div id="094f7639" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="movies-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="movies-dataset">movies dataset</h2>
-<div id="57e4759e" class="cell" data-execution_count="2">
+<div id="0e00ad19" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>movies_url <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/movies.json'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5327217a" class="cell" data-execution_count="3">
+<div id="a0bf459b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> pd.read_json(movies_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5650e5c0" class="cell" data-execution_count="5">
+<div id="9c9249ae" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>movies.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>(3201, 16)</code></pre>
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="head" class="level2">
 <h2 class="anchored" data-anchor-id="head"><code>head()</code></h2>
-<div id="a2ec6b72" class="cell" data-execution_count="6">
+<div id="2d1b59e4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>movies.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Rotten Tomatoes</strong> ratings are determined by taking “thumbs up” and “thumbs down” judgments from film critics and calculating the percentage of positive reviews.</li>
 <li><strong>IMDB ratings</strong> are formed by averaging scores (ranging from 1 to 10) provided by the site’s users.</li>
 </ul>
-<div id="eefac39a" class="cell" data-execution_count="7">
+<div id="2e68e701" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>),</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
@@ -332,23 +332,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="6">
 
 <style>
-  #altair-viz-9529d5727fbe4e798130fbb77da27417.vega-embed {
+  #altair-viz-1633585bc6cc47b1afbd26993c278a0a.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-9529d5727fbe4e798130fbb77da27417.vega-embed details,
-  #altair-viz-9529d5727fbe4e798130fbb77da27417.vega-embed details summary {
+  #altair-viz-1633585bc6cc47b1afbd26993c278a0a.vega-embed details,
+  #altair-viz-1633585bc6cc47b1afbd26993c278a0a.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-9529d5727fbe4e798130fbb77da27417"></div>
+<div id="altair-viz-1633585bc6cc47b1afbd26993c278a0a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9529d5727fbe4e798130fbb77da27417") {
-      outputDiv = document.getElementById("altair-viz-9529d5727fbe4e798130fbb77da27417");
+    if (outputDiv.id !== "altair-viz-1633585bc6cc47b1afbd26993c278a0a") {
+      outputDiv = document.getElementById("altair-viz-1633585bc6cc47b1afbd26993c278a0a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -401,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scatter-plot-add-bintrue" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot-add-bintrue">scatter plot – add <code>bin=True</code></h2>
-<div id="8faf5721" class="cell" data-execution_count="8">
+<div id="1ee455c3" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span><span class="va">True</span>),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
@@ -409,23 +409,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="7">
 
 <style>
-  #altair-viz-8e79225f2e3345598f274fc9d2836dda.vega-embed {
+  #altair-viz-63eaf2385305402a9105075af823bee8.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8e79225f2e3345598f274fc9d2836dda.vega-embed details,
-  #altair-viz-8e79225f2e3345598f274fc9d2836dda.vega-embed details summary {
+  #altair-viz-63eaf2385305402a9105075af823bee8.vega-embed details,
+  #altair-viz-63eaf2385305402a9105075af823bee8.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8e79225f2e3345598f274fc9d2836dda"></div>
+<div id="altair-viz-63eaf2385305402a9105075af823bee8"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8e79225f2e3345598f274fc9d2836dda") {
-      outputDiv = document.getElementById("altair-viz-8e79225f2e3345598f274fc9d2836dda");
+    if (outputDiv.id !== "altair-viz-63eaf2385305402a9105075af823bee8") {
+      outputDiv = document.getElementById("altair-viz-63eaf2385305402a9105075af823bee8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -478,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scatter-plot-20-bins" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot-20-bins">scatter plot – 20 bins</h2>
-<div id="f5128f39" class="cell" data-execution_count="9">
+<div id="e93a485d" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>, <span class="bu">bin</span><span class="op">=</span>alt.BinParams(maxbins<span class="op">=</span><span class="dv">20</span>)),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
@@ -486,23 +486,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="8">
 
 <style>
-  #altair-viz-44d9ebe62aee45b1a8b9c7f892027fda.vega-embed {
+  #altair-viz-1cd7cd8b339b4f6f85c7024b27e1ee27.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-44d9ebe62aee45b1a8b9c7f892027fda.vega-embed details,
-  #altair-viz-44d9ebe62aee45b1a8b9c7f892027fda.vega-embed details summary {
+  #altair-viz-1cd7cd8b339b4f6f85c7024b27e1ee27.vega-embed details,
+  #altair-viz-1cd7cd8b339b4f6f85c7024b27e1ee27.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-44d9ebe62aee45b1a8b9c7f892027fda"></div>
+<div id="altair-viz-1cd7cd8b339b4f6f85c7024b27e1ee27"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-44d9ebe62aee45b1a8b9c7f892027fda") {
-      outputDiv = document.getElementById("altair-viz-44d9ebe62aee45b1a8b9c7f892027fda");
+    if (outputDiv.id !== "altair-viz-1cd7cd8b339b4f6f85c7024b27e1ee27") {
+      outputDiv = document.getElementById("altair-viz-1cd7cd8b339b4f6f85c7024b27e1ee27");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -569,7 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="average" class="level2">
 <h2 class="anchored" data-anchor-id="average"><code>average()</code></h2>
-<div id="04f0d2b5" class="cell" data-execution_count="10">
+<div id="464ea756" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'average(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Major_Genre:N'</span>)</span>
@@ -577,23 +577,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="9">
 
 <style>
-  #altair-viz-746be61cb5fc4e10b7343e2b0cba3324.vega-embed {
+  #altair-viz-7ccb8b03765a4a4ba0d9d8c44c00940c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-746be61cb5fc4e10b7343e2b0cba3324.vega-embed details,
-  #altair-viz-746be61cb5fc4e10b7343e2b0cba3324.vega-embed details summary {
+  #altair-viz-7ccb8b03765a4a4ba0d9d8c44c00940c.vega-embed details,
+  #altair-viz-7ccb8b03765a4a4ba0d9d8c44c00940c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-746be61cb5fc4e10b7343e2b0cba3324"></div>
+<div id="altair-viz-7ccb8b03765a4a4ba0d9d8c44c00940c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-746be61cb5fc4e10b7343e2b0cba3324") {
-      outputDiv = document.getElementById("altair-viz-746be61cb5fc4e10b7343e2b0cba3324");
+    if (outputDiv.id !== "altair-viz-7ccb8b03765a4a4ba0d9d8c44c00940c") {
+      outputDiv = document.getElementById("altair-viz-7ccb8b03765a4a4ba0d9d8c44c00940c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -651,7 +651,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="average-with-sort..." class="level2">
 <h2 class="anchored" data-anchor-id="average-with-sort..."><code>average()</code> with <code>sort(...)</code></h2>
 <p>Now it’s clear which movie types are most and least popular</p>
-<div id="65162a30" class="cell" data-execution_count="11">
+<div id="5c8a6e33" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Attribution: ChatGPT</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Query: I have the following bar chart code in Altair [...] </span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I want to sort the bars by the X encoding (average rotten tomatoes rating). How can I do that?</span></span>
@@ -668,23 +668,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="10">
 
 <style>
-  #altair-viz-2823fcf7ce9f4a00b5c2ce94423f29bd.vega-embed {
+  #altair-viz-6ad334f4305947e6b577ae574b10949d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2823fcf7ce9f4a00b5c2ce94423f29bd.vega-embed details,
-  #altair-viz-2823fcf7ce9f4a00b5c2ce94423f29bd.vega-embed details summary {
+  #altair-viz-6ad334f4305947e6b577ae574b10949d.vega-embed details,
+  #altair-viz-6ad334f4305947e6b577ae574b10949d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2823fcf7ce9f4a00b5c2ce94423f29bd"></div>
+<div id="altair-viz-6ad334f4305947e6b577ae574b10949d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2823fcf7ce9f4a00b5c2ce94423f29bd") {
-      outputDiv = document.getElementById("altair-viz-2823fcf7ce9f4a00b5c2ce94423f29bd");
+    if (outputDiv.id !== "altair-viz-6ad334f4305947e6b577ae574b10949d") {
+      outputDiv = document.getElementById("altair-viz-6ad334f4305947e6b577ae574b10949d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -738,7 +738,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="interquartile-range" class="level2">
 <h2 class="anchored" data-anchor-id="interquartile-range">Interquartile range</h2>
-<div id="a4c36490" class="cell" data-execution_count="12">
+<div id="155969ba" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'q1(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    alt.X2(<span class="st">'q3(Rotten_Tomatoes_Rating):Q'</span>),</span>
@@ -749,23 +749,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="11">
 
 <style>
-  #altair-viz-979e5ea706274b5c9c31a4f824de3f7c.vega-embed {
+  #altair-viz-f9bf45e21b4d4b30a11086a08c4a9a34.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-979e5ea706274b5c9c31a4f824de3f7c.vega-embed details,
-  #altair-viz-979e5ea706274b5c9c31a4f824de3f7c.vega-embed details summary {
+  #altair-viz-f9bf45e21b4d4b30a11086a08c4a9a34.vega-embed details,
+  #altair-viz-f9bf45e21b4d4b30a11086a08c4a9a34.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-979e5ea706274b5c9c31a4f824de3f7c"></div>
+<div id="altair-viz-f9bf45e21b4d4b30a11086a08c4a9a34"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-979e5ea706274b5c9c31a4f824de3f7c") {
-      outputDiv = document.getElementById("altair-viz-979e5ea706274b5c9c31a4f824de3f7c");
+    if (outputDiv.id !== "altair-viz-f9bf45e21b4d4b30a11086a08c4a9a34") {
+      outputDiv = document.getElementById("altair-viz-f9bf45e21b4d4b30a11086a08c4a9a34");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -819,7 +819,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="case-study-when-are-the-highest-grossing-films" class="level2">
 <h2 class="anchored" data-anchor-id="case-study-when-are-the-highest-grossing-films">Case study: when are the highest grossing films?</h2>
-<div id="34e6e903" class="cell" data-execution_count="13">
+<div id="4eed49f7" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>movies_gross <span class="op">=</span> movies[[<span class="st">'US Gross'</span>, <span class="st">'Release Date'</span>]]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>movies_gross.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -871,7 +871,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="a-first-pass">a first pass</h2>
 <p>obviously we need to aggregate.</p>
 <p>also: what bug in the data does this plot reveal?</p>
-<div id="5efa413e" class="cell" data-execution_count="14">
+<div id="36f7c372" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_point().encode(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Release_Date:T'</span>),</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'US_Gross:Q'</span>)</span>
@@ -879,23 +879,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="13">
 
 <style>
-  #altair-viz-dc60b8fe698045bd9ee1ca29d25b52c9.vega-embed {
+  #altair-viz-40e5105d5e3643b9a0aefab9763f4c28.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-dc60b8fe698045bd9ee1ca29d25b52c9.vega-embed details,
-  #altair-viz-dc60b8fe698045bd9ee1ca29d25b52c9.vega-embed details summary {
+  #altair-viz-40e5105d5e3643b9a0aefab9763f4c28.vega-embed details,
+  #altair-viz-40e5105d5e3643b9a0aefab9763f4c28.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-dc60b8fe698045bd9ee1ca29d25b52c9"></div>
+<div id="altair-viz-40e5105d5e3643b9a0aefab9763f4c28"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-dc60b8fe698045bd9ee1ca29d25b52c9") {
-      outputDiv = document.getElementById("altair-viz-dc60b8fe698045bd9ee1ca29d25b52c9");
+    if (outputDiv.id !== "altair-viz-40e5105d5e3643b9a0aefab9763f4c28") {
+      outputDiv = document.getElementById("altair-viz-40e5105d5e3643b9a0aefab9763f4c28");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1032,7 +1032,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="transform_calculate-case-study-redux-what-time-of-year-do-us-movies-make-money-abroad" class="level2">
 <h2 class="anchored" data-anchor-id="transform_calculate-case-study-redux-what-time-of-year-do-us-movies-make-money-abroad"><code>transform_calculate</code> case study redux: what time of year do US movies make money abroad?</h2>
-<div id="a4c70e66" class="cell" data-execution_count="15">
+<div id="ccbda264" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_area().transform_calculate(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    NonUS_Gross<span class="op">=</span><span class="st">'datum.Worldwide_Gross - datum.US_Gross'</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -1042,23 +1042,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="14">
 
 <style>
-  #altair-viz-db71c344e5504207a8543c1bf8d2908a.vega-embed {
+  #altair-viz-8a4531d6cd5e4f29adb587ed0ed4829a.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-db71c344e5504207a8543c1bf8d2908a.vega-embed details,
-  #altair-viz-db71c344e5504207a8543c1bf8d2908a.vega-embed details summary {
+  #altair-viz-8a4531d6cd5e4f29adb587ed0ed4829a.vega-embed details,
+  #altair-viz-8a4531d6cd5e4f29adb587ed0ed4829a.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-db71c344e5504207a8543c1bf8d2908a"></div>
+<div id="altair-viz-8a4531d6cd5e4f29adb587ed0ed4829a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-db71c344e5504207a8543c1bf8d2908a") {
-      outputDiv = document.getElementById("altair-viz-db71c344e5504207a8543c1bf8d2908a");
+    if (outputDiv.id !== "altair-viz-8a4531d6cd5e4f29adb587ed0ed4829a") {
+      outputDiv = document.getElementById("altair-viz-8a4531d6cd5e4f29adb587ed0ed4829a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1122,7 +1122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="transform_filter-show-just-movies-before-1970" class="level2">
 <h2 class="anchored" data-anchor-id="transform_filter-show-just-movies-before-1970"><code>transform_filter</code> show just movies before 1970</h2>
-<div id="714da5e7" class="cell" data-execution_count="16">
+<div id="c8fd31b1" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_circle().encode(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Rotten_Tomatoes_Rating:Q'</span>),</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'IMDB_Rating:Q'</span>)</span>
@@ -1130,23 +1130,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="15">
 
 <style>
-  #altair-viz-2f7220e0f91f49d8baef11662b50c529.vega-embed {
+  #altair-viz-63fa5898bc114de2ade20fa007cc7a4b.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2f7220e0f91f49d8baef11662b50c529.vega-embed details,
-  #altair-viz-2f7220e0f91f49d8baef11662b50c529.vega-embed details summary {
+  #altair-viz-63fa5898bc114de2ade20fa007cc7a4b.vega-embed details,
+  #altair-viz-63fa5898bc114de2ade20fa007cc7a4b.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2f7220e0f91f49d8baef11662b50c529"></div>
+<div id="altair-viz-63fa5898bc114de2ade20fa007cc7a4b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2f7220e0f91f49d8baef11662b50c529") {
-      outputDiv = document.getElementById("altair-viz-2f7220e0f91f49d8baef11662b50c529");
+    if (outputDiv.id !== "altair-viz-63fa5898bc114de2ade20fa007cc7a4b") {
+      outputDiv = document.getElementById("altair-viz-63fa5898bc114de2ade20fa007cc7a4b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1214,7 +1214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="transform_aggregate-recap-from-earlier-in-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="transform_aggregate-recap-from-earlier-in-lecture"><code>transform_aggregate</code> recap from earlier in lecture</h2>
-<div id="687f1c5d" class="cell" data-execution_count="17">
+<div id="51e11435" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().encode(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'average(Rotten_Tomatoes_Rating):Q'</span>),</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Major_Genre:N'</span>)</span>
@@ -1222,23 +1222,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="16">
 
 <style>
-  #altair-viz-5743b34361264eeeb293dcb6d044c644.vega-embed {
+  #altair-viz-8401f3cfeae4426bb78c10cecf45f5b6.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-5743b34361264eeeb293dcb6d044c644.vega-embed details,
-  #altair-viz-5743b34361264eeeb293dcb6d044c644.vega-embed details summary {
+  #altair-viz-8401f3cfeae4426bb78c10cecf45f5b6.vega-embed details,
+  #altair-viz-8401f3cfeae4426bb78c10cecf45f5b6.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-5743b34361264eeeb293dcb6d044c644"></div>
+<div id="altair-viz-8401f3cfeae4426bb78c10cecf45f5b6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5743b34361264eeeb293dcb6d044c644") {
-      outputDiv = document.getElementById("altair-viz-5743b34361264eeeb293dcb6d044c644");
+    if (outputDiv.id !== "altair-viz-8401f3cfeae4426bb78c10cecf45f5b6") {
+      outputDiv = document.getElementById("altair-viz-8401f3cfeae4426bb78c10cecf45f5b6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1292,7 +1292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="transform_aggregate-whats-happening-under-the-hood" class="level2">
 <h2 class="anchored" data-anchor-id="transform_aggregate-whats-happening-under-the-hood"><code>transform_aggregate</code> what’s happening under the hood</h2>
 <p>The previous example did the aggregation directly in the encoding. We can also express this in a more verbose way, with <code>transform_aggregate()</code></p>
-<div id="5264f2b4" class="cell" data-execution_count="18">
+<div id="52422edf" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_aggregate(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    groupby<span class="op">=</span>[<span class="st">'Major_Genre'</span>],</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    Average_Rating<span class="op">=</span><span class="st">'average(Rotten_Tomatoes_Rating)'</span></span>
@@ -1303,23 +1303,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="17">
 
 <style>
-  #altair-viz-f5c15ffdca414094ab11767e15e35015.vega-embed {
+  #altair-viz-e7db3b4d3a6f425ba691e4a04da5ba16.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f5c15ffdca414094ab11767e15e35015.vega-embed details,
-  #altair-viz-f5c15ffdca414094ab11767e15e35015.vega-embed details summary {
+  #altair-viz-e7db3b4d3a6f425ba691e4a04da5ba16.vega-embed details,
+  #altair-viz-e7db3b4d3a6f425ba691e4a04da5ba16.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f5c15ffdca414094ab11767e15e35015"></div>
+<div id="altair-viz-e7db3b4d3a6f425ba691e4a04da5ba16"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f5c15ffdca414094ab11767e15e35015") {
-      outputDiv = document.getElementById("altair-viz-f5c15ffdca414094ab11767e15e35015");
+    if (outputDiv.id !== "altair-viz-e7db3b4d3a6f425ba691e4a04da5ba16") {
+      outputDiv = document.getElementById("altair-viz-e7db3b4d3a6f425ba691e4a04da5ba16");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1374,7 +1374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="transform_window-case-study-who-are-the-top-20-grossing-directors-of-all-time" class="level2">
 <h2 class="anchored" data-anchor-id="transform_window-case-study-who-are-the-top-20-grossing-directors-of-all-time"><code>transform_window</code>: case study: who are the top 20 grossing directors of all time?</h2>
 <p>Start by summing <code>Worldwide_Gross</code> for each director, and then plotting in descending order.</p>
-<div id="c8a79565" class="cell" data-execution_count="19">
+<div id="5dd6369c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_aggregate(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    Gross<span class="op">=</span><span class="st">'sum(Worldwide_Gross)'</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    groupby<span class="op">=</span>[<span class="st">'Director'</span>]</span>
@@ -1387,23 +1387,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="18">
 
 <style>
-  #altair-viz-4a5b049f56a94a7a88da8a6dc06ffc6a.vega-embed {
+  #altair-viz-4c3481570a444e9f89f83a5883334c29.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4a5b049f56a94a7a88da8a6dc06ffc6a.vega-embed details,
-  #altair-viz-4a5b049f56a94a7a88da8a6dc06ffc6a.vega-embed details summary {
+  #altair-viz-4c3481570a444e9f89f83a5883334c29.vega-embed details,
+  #altair-viz-4c3481570a444e9f89f83a5883334c29.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4a5b049f56a94a7a88da8a6dc06ffc6a"></div>
+<div id="altair-viz-4c3481570a444e9f89f83a5883334c29"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4a5b049f56a94a7a88da8a6dc06ffc6a") {
-      outputDiv = document.getElementById("altair-viz-4a5b049f56a94a7a88da8a6dc06ffc6a");
+    if (outputDiv.id !== "altair-viz-4c3481570a444e9f89f83a5883334c29") {
+      outputDiv = document.getElementById("altair-viz-4c3481570a444e9f89f83a5883334c29");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1456,7 +1456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>That’s a lot of directors! Let’s restrict to the top 20 -&gt; <code>transform_window()</code> + <code>transform_filter</code></p>
 <p><em>Side note: when do we know when to use <code>transform_window()</code> vs.&nbsp;<code>transform_aggregate()</code>? </em> <code>transform_aggregate()</code>: we want to reduce the number of rows (e.g., one row per group) * <code>transform_window()</code>: we want to keep the same number of rows</p>
 <p>In this case, we want to know the <em>ranking</em> of each row, but not reduce the total number of rows. So, use <code>transform_window()</code>.</p>
-<div id="5f239e3e" class="cell" data-execution_count="20">
+<div id="010b0bff" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_aggregate(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    Gross<span class="op">=</span><span class="st">'sum(Worldwide_Gross)'</span>,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    groupby<span class="op">=</span>[<span class="st">'Director'</span>]</span>
@@ -1474,23 +1474,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="19">
 
 <style>
-  #altair-viz-88b424a3f83047afa84e5a8e2ed0bfc0.vega-embed {
+  #altair-viz-cd340f33d92d4b15bdc995fecb4dcdb9.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-88b424a3f83047afa84e5a8e2ed0bfc0.vega-embed details,
-  #altair-viz-88b424a3f83047afa84e5a8e2ed0bfc0.vega-embed details summary {
+  #altair-viz-cd340f33d92d4b15bdc995fecb4dcdb9.vega-embed details,
+  #altair-viz-cd340f33d92d4b15bdc995fecb4dcdb9.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-88b424a3f83047afa84e5a8e2ed0bfc0"></div>
+<div id="altair-viz-cd340f33d92d4b15bdc995fecb4dcdb9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-88b424a3f83047afa84e5a8e2ed0bfc0") {
-      outputDiv = document.getElementById("altair-viz-88b424a3f83047afa84e5a8e2ed0bfc0");
+    if (outputDiv.id !== "altair-viz-cd340f33d92d4b15bdc995fecb4dcdb9") {
+      outputDiv = document.getElementById("altair-viz-cd340f33d92d4b15bdc995fecb4dcdb9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1541,7 +1541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>null</code> is not a director, and we certainly don’t want to say they’re the highest-grossing director. So let’s remove that -&gt; <code>transform_filter()</code> again</p>
-<div id="ad8b2b76" class="cell" data-execution_count="21">
+<div id="90936cbc" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_aggregate(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    Gross<span class="op">=</span><span class="st">'sum(Worldwide_Gross)'</span>,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    groupby<span class="op">=</span>[<span class="st">'Director'</span>]</span>
@@ -1561,23 +1561,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="20">
 
 <style>
-  #altair-viz-4e3fa9be22344a2da38d3b99124f46d3.vega-embed {
+  #altair-viz-20cd2b0802f343a6a9375775ea85dc26.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4e3fa9be22344a2da38d3b99124f46d3.vega-embed details,
-  #altair-viz-4e3fa9be22344a2da38d3b99124f46d3.vega-embed details summary {
+  #altair-viz-20cd2b0802f343a6a9375775ea85dc26.vega-embed details,
+  #altair-viz-20cd2b0802f343a6a9375775ea85dc26.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4e3fa9be22344a2da38d3b99124f46d3"></div>
+<div id="altair-viz-20cd2b0802f343a6a9375775ea85dc26"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4e3fa9be22344a2da38d3b99124f46d3") {
-      outputDiv = document.getElementById("altair-viz-4e3fa9be22344a2da38d3b99124f46d3");
+    if (outputDiv.id !== "altair-viz-20cd2b0802f343a6a9375775ea85dc26") {
+      outputDiv = document.getElementById("altair-viz-20cd2b0802f343a6a9375775ea85dc26");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1629,7 +1629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Question</strong>: How many directors are displayed now? Why?</p>
 <p>We need to remove <code>null</code> <em>before</em> ranking and filtering. Our final graph:</p>
-<div id="82bd3edd" class="cell" data-execution_count="22">
+<div id="b6c601aa" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(movies_url).mark_bar().transform_filter(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'datum.Director != null'</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>).transform_aggregate(</span>
@@ -1649,23 +1649,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="21">
 
 <style>
-  #altair-viz-b536da4fa367449f8bb976ca2de3ba70.vega-embed {
+  #altair-viz-b697b6c6f9af47b48cbf58e8917a65d9.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-b536da4fa367449f8bb976ca2de3ba70.vega-embed details,
-  #altair-viz-b536da4fa367449f8bb976ca2de3ba70.vega-embed details summary {
+  #altair-viz-b697b6c6f9af47b48cbf58e8917a65d9.vega-embed details,
+  #altair-viz-b697b6c6f9af47b48cbf58e8917a65d9.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-b536da4fa367449f8bb976ca2de3ba70"></div>
+<div id="altair-viz-b697b6c6f9af47b48cbf58e8917a65d9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b536da4fa367449f8bb976ca2de3ba70") {
-      outputDiv = document.getElementById("altair-viz-b536da4fa367449f8bb976ca2de3ba70");
+    if (outputDiv.id !== "altair-viz-b697b6c6f9af47b48cbf58e8917a65d9") {
+      outputDiv = document.getElementById("altair-viz-b697b6c6f9af47b48cbf58e8917a65d9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
